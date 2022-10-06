@@ -7,6 +7,7 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+const btnDeleteAll = document.querySelector('.delete__all');
 
 class Workout {
   date = new Date();
@@ -70,6 +71,7 @@ class App {
     form.addEventListener('submit', this.#newWorkout.bind(this));
     containerWorkouts.addEventListener('click', this.#moveMarker.bind(this));
     this.#getLocalData();
+    btnDeleteAll.addEventListener('click', this.#deleteAll.bind(this));
   }
 
   #getPosition() {
@@ -257,6 +259,10 @@ class App {
     form.insertAdjacentHTML('afterend', html);
     const trashIcon = document.querySelector('.hero__trash');
     trashIcon.addEventListener('click', this.#deleteWorkout.bind(this));
+
+    if (this.#workoutsList.length > 1) {
+      btnDeleteAll.classList.remove('hidden');
+    }
   }
 
   #renderMarker(workout) {
@@ -342,6 +348,10 @@ class App {
       deleteEl.classList.remove('hidden');
       deleteLi.classList.remove('hidden');
     });
+  }
+
+  #deleteAll() {
+    this.reset();
   }
 }
 
