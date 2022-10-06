@@ -12,6 +12,8 @@ const btnDeleteAllApprove = document.querySelector('.delete_all--workouts');
 const deleteAllContainer = document.querySelector('.btn__deleteAll--container');
 const deleteAllCancel = document.querySelector('.deleteAll_cancel');
 
+const editIcon = document.querySelector('.btn__delete');
+
 class Workout {
   date = new Date();
   id = Date.now();
@@ -259,9 +261,12 @@ class App {
 </div>
   </div>
     `;
+
     form.insertAdjacentHTML('afterend', html);
     const trashIcon = document.querySelector('.hero__trash');
+
     trashIcon.addEventListener('click', this.#deleteWorkout.bind(this));
+    editIcon.addEventListener('click', this.#editWorkout.bind(this));
 
     if (this.#workoutsList.length > 1) {
       btnDeleteAll.classList.remove('hidden');
@@ -351,6 +356,10 @@ class App {
       deleteEl.classList.remove('hidden');
       deleteLi.classList.remove('hidden');
     });
+  }
+
+  #editWorkout() {
+    this.#showForm(bind(this));
   }
 
   #deleteAll() {
