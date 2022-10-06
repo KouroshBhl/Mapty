@@ -8,6 +8,9 @@ const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 const btnDeleteAll = document.querySelector('.delete__all');
+const btnDeleteAllApprove = document.querySelector('.delete_all--workouts');
+const deleteAllContainer = document.querySelector('.btn__deleteAll--container');
+const deleteAllCancel = document.querySelector('.deleteAll_cancel');
 
 class Workout {
   date = new Date();
@@ -351,7 +354,17 @@ class App {
   }
 
   #deleteAll() {
-    this.reset();
+    deleteAllContainer.classList.remove('hidden');
+    btnDeleteAll.classList.add('hidden');
+
+    const remove = () => this.reset();
+
+    btnDeleteAllApprove.addEventListener('click', remove.bind(this));
+
+    deleteAllCancel.addEventListener('click', function () {
+      deleteAllContainer.classList.add('hidden');
+      btnDeleteAll.classList.remove('hidden');
+    });
   }
 }
 

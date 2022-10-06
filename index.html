@@ -33,6 +33,15 @@
       <img src="logo.png" alt="Logo" class="logo" />
       <div class="feauture__container">
         <button class="btn delete__all hidden">Delete All</button>
+        <div class="delete__workout hidden btn__deleteAll--container">
+          <p class="delete__message">Are you sure you want to delete all?</p>
+          <div class="btn__contain">
+            <button class="btn btn__cancel deleteAll_cancel">Cancel</button>
+            <button class="btn btn__delete delete_all--workouts">
+              Delete!
+            </button>
+          </div>
+        </div>
       </div>
       <ul class="workouts">
         <form class="form hidden">

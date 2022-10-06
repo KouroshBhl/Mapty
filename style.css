@@ -296,3 +296,6 @@ a:visited {
   justify-content: end;
   margin-bottom: 1.2rem;
 }
+.btn__contain {
+  text-align: center;
+}
