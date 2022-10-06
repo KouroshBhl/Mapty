@@ -44,7 +44,7 @@ a:visited {
 .sidebar {
   flex-basis: 50rem;
   background-color: var(--color-dark--1);
-  padding: 3rem 5rem 4rem 5rem;
+  padding: 3rem 2.4rem 4rem 5rem;
   display: flex;
   flex-direction: column;
 }
@@ -87,9 +87,32 @@ a:visited {
 .workout__title {
   font-size: 1.7rem;
   font-weight: 600;
-  grid-column: 1 / -1;
+  grid-column: 1 / 4;
+}
+.feauture__icons {
+  width: 4.8rem;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  gap: 1.75rem;
+  cursor: pointer;
 }
 
+.feauture__workouts--container {
+  display: flex;
+}
+.hero__icons {
+  width: 2.4rem;
+}
+.hero__trash {
+  /* color: rebeccapurple; */
+  color: var(--color-brand--1);
+}
+.hero__edit {
+  color: var(--color-brand--2);
+}
 .workout__details {
   display: flex;
   align-items: baseline;
