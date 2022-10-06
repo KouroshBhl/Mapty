@@ -97,7 +97,6 @@ a:visited {
   justify-content: center;
   margin-bottom: 1.75rem;
   gap: 1.75rem;
-  cursor: pointer;
 }
 
 .feauture__workouts--container {
@@ -107,11 +106,12 @@ a:visited {
   width: 2.4rem;
 }
 .hero__trash {
-  /* color: rebeccapurple; */
   color: var(--color-brand--1);
+  cursor: pointer;
 }
 .hero__edit {
   color: var(--color-brand--2);
+  cursor: pointer;
 }
 .workout__details {
   display: flex;
